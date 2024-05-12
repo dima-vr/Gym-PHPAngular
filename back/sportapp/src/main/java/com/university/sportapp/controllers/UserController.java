@@ -5,7 +5,10 @@ import com.university.sportapp.dto.request.UserRequest;
 import com.university.sportapp.dto.response.UserResponse;
 import com.university.sportapp.models.User;
 import com.university.sportapp.services.BaseService;
+import com.university.sportapp.services.UserService;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
