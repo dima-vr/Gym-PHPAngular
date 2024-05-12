@@ -109,9 +109,9 @@ public class AuthorizationController {
 
         try {
             if (userService.findByUsername(request.getUsername()) == null) {
-                return new ResponseEntity<>("error", HttpStatus.CONFLICT);
-            } else {
                 user = userService.create(user);
+            } else {
+                return new ResponseEntity<>("Already exist", HttpStatus.CONFLICT);
             }
         } catch (NoSuchElementException noSuchElementException) {
             try {
