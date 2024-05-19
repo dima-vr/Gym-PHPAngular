@@ -1,5 +1,5 @@
-import {UserRole} from "./user-role";
-import {User} from "./user";
+import {RoleModel} from "./role.model";
+import {User} from "./user.model";
 
 
 export class AuthResponse {
@@ -7,10 +7,10 @@ export class AuthResponse {
   public refreshToken: string;
   public accessTokenLifetimeMinutes: number;
   public refreshTokenLifetimeMinutes: number;
-  public role: UserRole;
+  public role: RoleModel;
   public user: User;
 
-  constructor(token: string, refreshToken: string, accessTokenLifetimeMinutes: number, refreshTokenLifetimeMinutes: number, role: UserRole, user: User) {
+  constructor(token: string, refreshToken: string, accessTokenLifetimeMinutes: number, refreshTokenLifetimeMinutes: number, role: RoleModel, user: User) {
     this.token = token;
     this.refreshToken = refreshToken;
     this.accessTokenLifetimeMinutes = accessTokenLifetimeMinutes;

@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {map, Observable, tap} from "rxjs";
-import {User} from "../model/user";
+import {User} from "../models/user.model";
 import {HttpClient, HttpParams} from "@angular/common/http";
-import {AuthResponse} from "../model/auth-response";
+import {AuthResponse} from "../models/auth-response";
 import {environment} from "../../environments/environment";
 import {Router} from "@angular/router";
 

@@ -1,28 +1,36 @@
-import { GoalModel } from "./goal.model";
-import { RoleModel } from "./role.model";
+import {RoleModel} from "./role.model";
+import {Goal} from "./goal.model";
 
-export class UserModel {
-  id: number;
-  username: string;
-  password: string;
-  email: string;
-  profilePhotoUrl: string;
-  height: number;
-  weight: number;
-  paymentStatus: boolean;
-  goals: GoalModel[];
-  role: RoleModel;
 
-  constructor(id: number, username: string, password: string, email: string, profilePhotoUrl: string, height: number, weight: number, paymentStatus: boolean, goals: GoalModel[], role: RoleModel) {
-    this.id = id;
-    this.username = username;
-    this.password = password;
-    this.email = email;
-    this.profilePhotoUrl = profilePhotoUrl;
-    this.height = height;
-    this.weight = weight;
-    this.paymentStatus = paymentStatus;
-    this.goals = goals;
-    this.role = role;
+export class User {
+  constructor(
+    public id?: number,
+    public email?: string,
+    public password?: string,
+    public role?: RoleModel,
+    public profilePhotoUrl?: string,
+    public height?: number,
+    public weight?: number,
+    public paymentStatus?: boolean,
+    public goals?: Goal[],
+  ) {
+  }
+
+  public static fromObjectToModel(user: any): User {
+    return new User(
+      user.id,
+      user.email,
+      user.password,
+      user.role,
+      user.profilePhotoUrl,
+      user.height,
+      user.weight,
+      user.paymentStatus,
+      user.goals,
+    );
+  }
+
+  public isAdmin(): boolean {
+    return this.role == RoleModel.ADMIN;
   }
 }

@@ -1,9 +1,13 @@
-export class GoalModel {
-  id: number;
-  goals: string;
+export class Goal {
+  constructor(
+    public id?: number,
+    public goals?: string) {
+  }
 
-  constructor(id: number, goals: string) {
-    this.id = id;
-    this.goals = goals;
+  public static fromObjectToModel(goal: any): Goal {
+    return new Goal(
+      goal.id,
+      goal.goals,
+    );
   }
 }
