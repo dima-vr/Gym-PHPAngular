@@ -31,6 +31,6 @@ export class User {
   }
 
   public isAdmin(): boolean {
-    return this.role?.name == 'Admin';
+    return this.role == UserRole.ADMIN;
   }
 }

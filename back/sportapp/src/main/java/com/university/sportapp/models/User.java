@@ -57,7 +57,7 @@ public class User {
     @JoinColumn(name = "user_id")
     private List<Goal> goals;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "role_id")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
     private Role role;
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./login/login.component";
+import {LoginComponent} from "./pages/login/login.component";
 import {AppComponent} from "./app.component";
 import {MainComponent} from "./pages/main/main.component";
 import {UserScheduleComponent} from "./pages/user-schedule/user-schedule.component";

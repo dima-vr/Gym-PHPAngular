@@ -16,9 +16,9 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  public login(email: string, password: string): Observable<User> {
+  public login(username: string, password: string): Observable<User> {
     // @ts-ignore
-    return this.http.post(this.authApiUrl + "/login", {email, password}).pipe(
+    return this.http.post(this.authApiUrl + "/login", {username, password}).pipe(
       // @ts-ignore
       map((response: AuthResponse) => {
         let user = null;
