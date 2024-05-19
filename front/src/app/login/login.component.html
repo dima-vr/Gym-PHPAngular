@@ -1,0 +1,29 @@
+<div class="register-page-frame">
+  <div class="left-section">
+    <img src="../assets/images/dumbbells.jpg" alt="Dumbbells and weights" class="image" style="width: 100%">
+  </div>
+  <div class="right-section">
+    <div style="width: 60%">
+      <h1 class="header">Login</h1>
+      <h3 class="sub-header">Login your account in a seconds</h3>
+      <div class="form-container">
+        <form [formGroup]="loginForm" class="login-form">
+          <mat-form-field class="input-style padding-top-40">
+            <mat-label>Username</mat-label>
+            <input formControlName="username" name="username" matInput type="username">
+            <mat-error *ngIf="loginForm.get('username')?.hasError('required')">This field is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="input-style">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" name="password" matInput type="password" required>
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">This field is required</mat-error>
+          </mat-form-field>
+
+          <button (click)="login()" class="login-btn" mat-raised-button>Log in</button>
+        </form>
+        <p>Do not have account? <a href="/register">Sign up</a></p>
+      </div>
+    </div>
+  </div>
+</div>
