@@ -12,11 +12,21 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {AuthorizationInterceptor} from "./authorization-interceptor";
+import { MainComponent } from './pages/main/main.component';
+import { HeaderComponent } from './pages/header/header.component';
+import { MyWorkoutComponent } from './pages/my-workout/my-workout.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { UserScheduleComponent } from './pages/user-schedule/user-schedule.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    MainComponent,
+    HeaderComponent,
+    MyWorkoutComponent,
+    UserProfileComponent,
+    UserScheduleComponent
   ],
   imports: [
     BrowserModule,
@@ -35,5 +45,4 @@ import {AuthorizationInterceptor} from "./authorization-interceptor";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

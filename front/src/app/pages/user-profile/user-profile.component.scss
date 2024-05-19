@@ -1,0 +1,227 @@
+.user-profile {
+  padding: 20px;
+  background-color: #f9f9f9;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .user-info {
+      display: flex;
+      align-items: center;
+
+      .profile-pic {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+
+      .user-details {
+        h2 {
+          margin: 0;
+          font-size: 22px;
+          color: #333;
+        }
+
+        p {
+          margin: 0;
+          font-size: 16px;
+          color: #777;
+
+          strong {
+            color: #000;
+          }
+        }
+      }
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        margin-left: 20px;
+        cursor: pointer;
+      }
+
+      .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .goals-section {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .goals-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+      }
+
+      .goals-nav {
+        display: flex;
+        align-items: center;
+
+        button {
+          background-color: #6c63ff;
+          color: #ffffff;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #5548c8;
+          }
+
+          &:first-child,
+          &:last-child {
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .goal-of-the-day {
+      background-color: #00bcd4;
+      margin-top: 20px;
+      display: flex;
+      border-radius: 8px;
+      align-items: center;
+
+      .goal-icon {
+        border-radius: 8px;
+        padding: 20px;
+        margin-right: 20px;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .goal-details {
+        h4 {
+          margin: 0;
+          font-size: 16px;
+          color: #333;
+        }
+
+        p {
+          margin: 0;
+          font-size: 14px;
+          color: #777;
+
+          &:last-child {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #555;
+          }
+        }
+      }
+    }
+  }
+
+  .workout-section {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .workout-card {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      h4 {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        color: #333;
+      }
+
+      .workout-details {
+        p {
+          margin: 0 0 5px 0;
+          font-size: 14px;
+          color: #777;
+
+          strong {
+            color: #333;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+
+      .prev,
+      .next {
+        background-color: #6c63ff;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #5548c8;
+        }
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        background-color: #cccccc;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+
+        &.active {
+          background-color: #6c63ff;
+        }
+      }
+    }
+  }
+}

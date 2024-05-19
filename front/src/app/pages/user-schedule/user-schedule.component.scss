@@ -1,0 +1,193 @@
+$user-schedule-bg: #4A4C7C;
+$user-schedule-item-bg: #3A3C6C;
+$primary-blue: #00AEEF;
+$secondary-blue: #007ACC;
+$text-color: #fff;
+$goal-bg: #fff;
+$goal-border: #4A4C7C;
+
+.user-schedule {
+  display: flex;
+  height: 100vh; // Ensure the component takes up the full height of the viewport
+
+  .sidebar {
+    width: 25%;
+    background-color: $user-schedule-bg;
+    color: $text-color;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Space out the schedule list and buttons
+
+    .schedule-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        margin: 0;
+      }
+
+      a {
+        color: $text-color;
+        text-decoration: underline;
+      }
+    }
+
+    .schedule-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+
+      .schedule-item {
+        margin-bottom: 15px;
+        background-color: $user-schedule-item-bg;
+        padding: 10px;
+        border-radius: 10px; // Smoothed edges
+
+        .day {
+          font-weight: bold;
+        }
+
+        .activity, .duration, .time {
+          display: block;
+        }
+      }
+    }
+
+    .help-button, .logout-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: $text-color;
+      color: $user-schedule-bg;
+      border: none;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 10px; // Smoothed edges
+    }
+  }
+
+  .main-content {
+    width: 75%;
+    display: flex;
+    justify-content: center; // Center the content container
+    align-items: center; // Center the content container vertically
+    padding: 20px;
+
+    .content-container {
+      width: 100%;
+      max-width: 800px; // Set a max-width to control the container's width
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; // Space out the sections within the main content
+
+    }
+
+    .trainer-section {
+      .trainer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .trainer-images {
+          display: flex;
+
+          img {
+            border-radius: 50%;
+            margin: 0 5px;
+          }
+        }
+      }
+
+      .goals-section {
+        h3 {
+          margin-bottom: 10px;
+        }
+
+        .goal-cards {
+          display: flex;
+          justify-content: space-around;
+
+          .goal-card {
+            background-color: $goal-bg;
+            border: 2px solid $goal-border;
+            border-radius: 10px; // Smoothed edges
+            padding: 10px 20px;
+            text-align: center;
+            width: 30%;
+
+            p {
+              margin: 0;
+              color: $user-schedule-bg;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .workout-info {
+        display: flex;
+        flex-direction: column; // Stack the workout cards vertically
+        align-items: center;
+
+        .workout-card {
+          background-color: $primary-blue;
+          color: $text-color;
+          padding: 20px;
+          margin: 10px 0; // Add some margin between cards
+          width: 100%; // Make the cards take the full width of the container
+          text-align: center;
+          border-radius: 10px; // Smoothed edges
+
+          &.secondary {
+            background-color: $secondary-blue; // Different shade of blue
+          }
+
+          h3 {
+            margin: 0 0 10px 0; // Margin for separation between the heading and the rest
+          }
+
+          p {
+            margin: 5px 0;
+          }
+        }
+      }
+    }
+
+    .goal-progress-section {
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .progress-chart {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end; // Align the bars to the bottom
+        height: 200px; // Set a fixed height for the chart
+        background-color: #f1f1f1; // Background color for the chart
+        padding: 10px;
+        border-radius: 10px; // Smoothed edges
+
+        .progress-bar-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .progress-bar {
+            width: 30px;
+            background-color: $primary-blue;
+            border-radius: 10px 10px 0 0; // Smoothed edges at the top
+          }
+
+          .progress-label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: $user-schedule-bg;
+          }
+        }
+      }
+    }
+  }
+}
