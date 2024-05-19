@@ -1,0 +1,66 @@
+<app-header></app-header>
+<div class="user-schedule">
+  <div class="sidebar">
+    <div>
+      <div class="schedule-header">
+        <h2>My Schedule</h2>
+        <a href="#">View All</a>
+      </div>
+      <ul class="schedule-list">
+        <li *ngFor="let item of schedule" class="schedule-item">
+          <div class="day">{{ item.day }}</div>
+          <div class="activity">{{ item.activity }}</div>
+          <div class="duration">{{ item.duration }}</div>
+          <div class="time">{{ item.time }}</div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <button class="help-button">Help</button>
+      <button class="logout-button">Logout</button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="content-container">
+      <div class="trainer-section">
+        <div class="trainer-header">
+          <div class="trainer-images">
+          </div>
+        </div>
+
+        <div class="goals-section">
+          <h3>General Goals</h3>
+          <div class="goal-cards">
+            <div class="goal-card" *ngFor="let goal of goals">
+              <p>{{ goal }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="workout-info">
+          <div class="workout-card">
+            <h3>Work done today</h3>
+            <p>Workout</p>
+            <p>4 hrs</p>
+          </div>
+          <div class="workout-card secondary">
+            <h3>Goal for today</h3>
+            <p>Workout</p>
+            <p>5 hrs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="goal-progress-section">
+        <h3>Goal Progress</h3>
+        <div class="progress-chart">
+          <div *ngFor="let progress of goalProgress" class="progress-bar-container">
+            <div class="progress-bar" [style.height.%]="progress.progress"></div>
+            <div class="progress-label">{{ progress.day }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+nav {
+  background-color: #333;
+  padding: 1rem;
+}
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+li {
+  a {
+    color: deepskyblue;
+    text-decoration: none;
+    &.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
