@@ -13,6 +13,7 @@ export class User {
     public weight?: number,
     public paymentStatus?: boolean,
     public goals?: Goal[],
+    public username?: string,
   ) {
   }
 
@@ -27,6 +28,7 @@ export class User {
       user.weight,
       user.paymentStatus,
       user.goals,
+      user.username,
     );
   }
 

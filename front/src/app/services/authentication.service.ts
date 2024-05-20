@@ -5,6 +5,7 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {AuthResponse} from "../models/auth-response";
 import {environment} from "../../environments/environment";
 import {Router} from "@angular/router";
+import {RoleModel} from "../models/role.model";
 
 @Injectable({
   providedIn: 'root'
@@ -70,5 +71,28 @@ export class AuthenticationService {
   private updateTokens(authResponse: AuthResponse): void {
     sessionStorage.setItem('authHeader', `Bearer ${authResponse.token}`);
     localStorage.setItem('refreshToken', `${authResponse.refreshToken}`);
+  }
+
+  public register(user: User): Observable<User> {
+
+    let email = user.email;
+    let password = user.password;
+    let username = user.username;
+    let profilePhotoUrl = user.profilePhotoUrl;
+    let height = user.height;
+    let weight = user.weight;
+    let paymentStatus = user.paymentStatus;
+    let role = RoleModel.USER;
+
+    return this.http.post(this.authApiUrl + "/register", {email, password, username, profilePhotoUrl, height, weight, paymentStatus, role}).pipe(
+      // @ts-ignore
+      map((response: AuthResponse) => {
+        if (response && response.user) {
+          const newUser = User.fromObjectToModel(response.user);
+          newUser.role = response.role;
+          return newUser;
+        }
+        return user;
+      }));
   }
 }

@@ -9,7 +9,7 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogModule} from "@angular/material/dialog";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {AuthorizationInterceptor} from "./authorization-interceptor";
 import { MainComponent } from './pages/main/main.component';
@@ -17,6 +17,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import { MyWorkoutComponent } from './pages/my-workout/my-workout.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { UserScheduleComponent } from './pages/user-schedule/user-schedule.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { UserScheduleComponent } from './pages/user-schedule/user-schedule.compo
     ReactiveFormsModule,
     MatButtonModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthorizationInterceptor, multi: true},
